@@ -8,6 +8,10 @@ function App() {
   const [menuitems, setmenuitems] = useState(items);
   const [ctegories, setctegories] = useState([]);
   const filteritems = (category) => {
+    if(category === 'all'){
+      setmenuitems(items)
+      return; 
+    }
     const newitems = items.filter((item) => item.category === category)
       setmenuitems(newitems)
     } 
